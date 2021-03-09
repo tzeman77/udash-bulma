@@ -1,0 +1,8 @@
+*~
+.*.swp
+target
+lib_managed
+tags
+.idea
+out
+.idea_modules
