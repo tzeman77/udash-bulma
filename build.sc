@@ -105,8 +105,10 @@ trait Common extends CrossScalaModule with PublishModule {
         jar -> e)
     } flatMap { case (jar, e) =>
       Source.fromInputStream(jar.getInputStream(e)).getLines()
-    } filter(_.startsWith(".")) map(_ drop 1 takeWhile(c =>
-      c.isLetterOrDigit || Set('-', '_').contains(c)))
+    } filter(_.startsWith(".")) flatMap { v =>
+      v drop 1 split '.' map(_ takeWhile(c =>
+        c.isLetterOrDigit || Set('-', '_').contains(c)))
+    }
 
     val delim = '"'
     val definitions = allClasses.toList.distinct.sorted map { c =>
