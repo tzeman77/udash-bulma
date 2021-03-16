@@ -87,7 +87,7 @@ trait Common extends CrossScalaModule with PublishModule {
 
   def bulmaDep = T{Agg(D.webjars.bulma)}
 
-  def pascalCase(s: String): String = s.split("-").map(
+  def pascalCase(s: String): String = s.split('-').map(
     _.toList match {
       case first :: rest => (first.toUpper :: rest).mkString
     }).mkString
@@ -105,10 +105,9 @@ trait Common extends CrossScalaModule with PublishModule {
         jar -> e)
     } flatMap { case (jar, e) =>
       Source.fromInputStream(jar.getInputStream(e)).getLines()
-    } filter(_.startsWith(".")) flatMap { v =>
-      v drop 1 split '.' map(_ takeWhile(c =>
-        c.isLetterOrDigit || Set('-', '_').contains(c)))
-    }
+    } map(_.trim) filter(_ startsWith ".") flatMap(_ split ' ') flatMap(
+      _ split '.' drop 1 map(_ takeWhile(c =>
+        c.isLetterOrDigit || Set('-', '_').contains(c))))
 
     val delim = '"'
     val definitions = allClasses.toList.distinct.sorted map { c =>
