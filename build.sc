@@ -26,7 +26,7 @@ import scala.io.Source
 import scala.jdk.CollectionConverters.EnumerationHasAsScala
 
 object V {
-  val app = "0.1-SNAPSHOT"
+  val app = "0.1"
   val scalaJs = "1.5.0"
   val scala212 = "2.12.12"
   val scala213 = "2.13.5"
