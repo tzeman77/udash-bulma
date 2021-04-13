@@ -85,12 +85,15 @@ abstract class Autocomplete[T](val selected: Property[T])(
 
   protected def inputModifiers: Seq[Modifier] = Seq(isFocused, autofocus)
 
+  protected def fieldModifiers: Seq[Modifier] = Seq()
+
   protected def renderInput: InputBinding[Input] =
     TextInput(q)(input_, commonModifiers, inputModifiers,
       placeholder:=placeHolder, onkeydown:+=keyHandler)
 
   def tpl: TypedTag[Div] =
     div(field, dropdown, isActive.styleIf(list transform(_.nonEmpty)),
+      fieldModifiers,
       div(control, isLoading.styleIf(busy), commonModifiers,
         renderInput, renderMenu))
 
