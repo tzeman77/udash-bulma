@@ -62,7 +62,8 @@ s""" a abbr acronym address applet area article aside audio b base basefont bb
      keygen label legend li link map mark menu meta meter nav noframes noscript
      object ol optgroup option output p param pre progress q rp rt ruby s samp
      script section select small source span strike strong style sub sup table
-     tbody td textarea tfoot th thead time title tr track tt u ul var video wbr
+     tag tags tbody td textarea tfoot th thead time title tr track tt u ul var
+     video wbr
 """.trim.split("\\s+").toSet
 
 trait Common extends CrossScalaModule with PublishModule {
