@@ -13,6 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+/*
+  REPL:
+  ./mill --repl -w
+
+  IdeaJ project:
+  ./mill mill.scalalib.GenIdea/idea
+
+ */
 import java.util.jar.JarFile
 
 import mill._
@@ -36,7 +45,7 @@ object V {
   }
 
   object webjars {
-    val bulma = "0.9.1"
+    val bulma = "0.9.3"
   }
 
 }
