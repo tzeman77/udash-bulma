@@ -83,7 +83,7 @@ abstract class Autocomplete[T](val selected: Property[T])(
    */
   protected def commonModifiers: Seq[Modifier] = Seq()
 
-  protected def inputModifiers: Seq[Modifier] = Seq(isFocused, autofocus)
+  protected def inputModifiers: Seq[Modifier] = Seq(autofocus)
 
   protected def fieldModifiers: Seq[Modifier] = Seq()
 
