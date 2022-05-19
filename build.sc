@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Tomas Zeman <tomas@functionals.cz>
+ * Copyright 2021-2022 Tomas Zeman <tomas@functionals.cz>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,17 +35,17 @@ import scala.io.Source
 import scala.jdk.CollectionConverters.EnumerationHasAsScala
 
 object V {
-  val app = "0.3"
+  val app = "0.4-SNAPSHOT"
   val scalaJs = "1.5.0"
   val scala212 = "2.12.12"
   val scala213 = "2.13.5"
 
   object udash {
-    val core = "0.9.0-M8"
+    val core = "0.9.0-M26"
   }
 
   object webjars {
-    val bulma = "0.9.3"
+    val bulma = "0.9.4"
   }
 
 }
@@ -63,16 +63,27 @@ object D {
 }
 
 val reservedWords: Set[String] =
-s""" a abbr acronym address applet area article aside audio b base basefont bb
-     bdo big blockquote body br button canvas caption center cite code col
-     colgroup command datagrid datalist dd del details dfn dialog dir div dl dt
-     em embed eventsource fieldset figcaption figure font footer form frame
-     frameset h1 head header hgroup hr html i iframe img input ins isindex kbd
-     keygen label legend li link map mark menu meta meter nav noframes noscript
-     object ol optgroup option output p param pre progress q rp rt ruby s samp
-     script section select small source span strike strong style sub sup table
-     tag tags tbody td textarea tfoot th thead time title tr track tt u ul var
-     video wbr
+s""" a abbr acronym address applet area article aside audio
+     b base basefont bb bdo big blockquote body br button
+     canvas caption center cite code col colgroup command content
+     datagrid datalist dd del details dfn dialog dir div dl dt
+     em embed eventsource
+     fieldset figcaption figure font footer form frame frameset
+     h1 head header hgroup hr html
+     i iframe img input ins isindex
+     kbd keygen
+     label legend li link
+     map mark menu meta meter
+     nav noframes noscript
+     object ol optgroup option output
+     p param pre progress
+     q
+     rp rt ruby
+     s samp script section select small source span strike strong style sub sup
+     table tag tags tbody td textarea tfoot th thead time title tr track tt
+     u ul
+     var video
+     wbr
 """.trim.split("\\s+").toSet
 
 trait Common extends CrossScalaModule with PublishModule {
